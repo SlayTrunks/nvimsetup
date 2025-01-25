@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/trunks/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["doorboy.vim"] = {
+    loaded = true,
+    path = "/home/trunks/.local/share/nvim/site/pack/packer/start/doorboy.vim",
+    url = "https://github.com/itmammoth/doorboy.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/trunks/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -164,6 +169,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/trunks/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["tailwind-highlight.nvim"] = {
+    loaded = true,
+    path = "/home/trunks/.local/share/nvim/site/pack/packer/start/tailwind-highlight.nvim",
+    url = "https://github.com/princejoogie/tailwind-highlight.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

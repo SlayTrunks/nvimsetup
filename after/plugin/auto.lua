@@ -1,14 +1,24 @@
 local luasnip = require("luasnip")
 
--- html snippets in javascript and javascriptreact
+-- Define snippets
 luasnip.snippets = {
-  html = {}
+  html = {
+    -- Add your html snippets here
+  },
+  tailwindcss = {
+    luasnip.snippet("twc", { luasnip.text_node('class="') }),  -- A simple example snippet
+    -- Add more Tailwind CSS snippets as needed
+  },
 }
-luasnip.snippets.javascript = luasnip.snippets.html
-luasnip.snippets.javascriptreact = luasnip.snippets.html
-luasnip.snippets.typescriptreact = luasnip.snippets.html
 
-require("luasnip/loaders/from_vscode").load({include = {"html"}})
+-- Extend html and tailwindcss snippets to other file types
+luasnip.snippets.javascript = vim.tbl_deep_extend("force", {}, luasnip.snippets.html, luasnip.snippets.tailwindcss)
+luasnip.snippets.javascriptreact = vim.tbl_deep_extend("force", {}, luasnip.snippets.html, luasnip.snippets.tailwindcss)
+luasnip.snippets.typescriptreact = vim.tbl_deep_extend("force", {}, luasnip.snippets.html, luasnip.snippets.tailwindcss)
+
+-- Load snippets from VSCode
 require("luasnip/loaders/from_vscode").lazy_load()
-require('luasnip').filetype_extend("javascriptreact", { "html" })
-require('luasnip').filetype_extend("typescriptreact", { "html" })
+
+-- Extend file types with html and tailwindcss snippets
+require('luasnip').filetype_extend("javascriptreact", { "html", "tailwindcss" })
+require('luasnip').filetype_extend("typescriptreact", { "html", "tailwindcss" })
