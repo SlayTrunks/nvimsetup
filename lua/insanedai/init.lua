@@ -1,3 +1,6 @@
+-- Set leader key before loading plugins
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.uv.fs_stat(lazypath) then
   print('Installing lazy.nvim....')
@@ -16,3 +19,4 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup('insanedai.plugins')
 require("insanedai.remap")
 require("insanedai.set")
+
